@@ -1,7 +1,10 @@
 package atmpackage;
 
 public class DebitCard extends Bank {
-    int cardNumber = 123456789;
+    private int cardNumber;
+    private String expiry;
+    private int CVV;
+    private int pin;
 
     public int getCardNumber() {
         return cardNumber;

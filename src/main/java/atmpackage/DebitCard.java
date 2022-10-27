@@ -1,22 +1,24 @@
 package atmpackage;
 
 public class DebitCard extends Bank {
-    private int cardNumber;
-    private String expiry;
+    private int card_number;
+    private String expiry_date;
     private int CVV;
     private int pin;
 
+    public DebitCard() {
+    }
+
     public int getCardNumber() {
-        return cardNumber;
+        return card_number;
     }
 
     public void setCardNumber(int cardNumber) {
-        this.cardNumber = cardNumber;
+        this.card_number = cardNumber;
     }
 
-    String expireDate;
 
     public String getExpireDate() {
-        return expireDate;
+        return expiry_date;
     }
 }

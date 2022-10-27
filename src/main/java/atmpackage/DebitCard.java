@@ -4,7 +4,12 @@ public class DebitCard extends Bank {
     private int card_number;
     private String expiry_date;
     private int CVV;
+
+
     private int pin;
+    public int getPin() {
+        return pin;
+    }
 
     public DebitCard() {
     }

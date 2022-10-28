@@ -12,6 +12,7 @@ public class DebitCard extends Bank {
     }
 
     public DebitCard() {
+
     }
 
     public int getCardNumber() {

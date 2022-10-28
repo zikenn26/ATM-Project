@@ -12,7 +12,7 @@ public class ATM extends Bank {
     public static void main(String[] args) throws IOException {
         introduction();
         Scanner sc = new Scanner(System.in);
-
+        BankDataBase data = BankDataBase.getInstance();
 
         boolean end = false;
         while (!end) {

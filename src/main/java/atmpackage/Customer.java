@@ -2,7 +2,7 @@ package atmpackage;
 
 public class Customer {
 
-    String customerName;
+    String  customerName;
     String address;
     String dob;
     public String getCustomerName() {

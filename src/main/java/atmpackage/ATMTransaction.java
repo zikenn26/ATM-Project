@@ -56,6 +56,7 @@ public class ATMTransaction implements ATMInterface{
                 }
                 if (!end) {
                     System.out.println("\nThis customer number is already registered");
+                    break;
                 }
             } catch (InputMismatchException e) {
                 System.out.println("\nInvalid Choice.");

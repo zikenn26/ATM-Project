@@ -12,21 +12,20 @@ public class ATM extends Bank {
 //    String location;
 
     public static void main(String[] args) throws IOException {
-        Map<Integer, Account> data = new HashMap<>();
-        data.put(123456, new Account(123456,1234,654321, 2000, "Gulshan"));
-
-
+        BankDataBase singletonObject = BankDataBase.getInstance();
+//        singletonObject.getDataBase();
+//        Map<Integer, Account> data = new HashMap<>();
+//        data.put(123456, new Account(123456,1234,654321, 2000, "Gulshan"));
         introduction();
-        dashBoard(data);
+        dashBoard(singletonObject.getDataBase());
 //        menu();
     }
 
     public static void introduction(){
         System.out.println("Welcome to the ATM");
     }
-    public static void dashBoard(Map<Integer, Account> data){
+    public static void dashBoard(Map<Integer, DebitCard> debitCard){
         Scanner sc = new Scanner(System.in);
-//        BankDataBase db = BankDataBase.getInstance();
         ATMTransaction at = new ATMTransaction();
 
         boolean end = false;
@@ -41,7 +40,7 @@ public class ATM extends Bank {
                     case 0 -> exit(0);
                     case 1 -> {
 //                        ATMTransaction.getLogin(data);
-                        at.getLogin(data);
+                        at.getLogin(debitCard);
                         menu();
                         end = true;
 

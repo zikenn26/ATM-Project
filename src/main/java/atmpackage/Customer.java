@@ -2,10 +2,13 @@ package atmpackage;
 
 public class Customer {
 
-    String  customerName;
-    String address;
-    String dob;
+    private String  customerName;
+    private String address;
+    private String dob;
     public String getCustomerName() {
         return customerName;
+    }
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 }

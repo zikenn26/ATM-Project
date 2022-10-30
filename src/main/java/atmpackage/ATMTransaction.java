@@ -6,11 +6,8 @@ import java.util.*;
 
 public class ATMTransaction implements ATMInterface{
     Scanner sc = new Scanner(System.in);
-    String transactionDate;
-    int transactionType;
 
-
-    public void getLogin(Map<Integer, Account> data) throws IOException {
+    public void getLogin(Map<Integer, DebitCard> debitCard) throws IOException {
 //        Map<Integer, Account> data = new HashMap<>();
 //        data.put(123456, new Account(123456,1234,"Savings", 654321, 2000,"Gulshan"));
         boolean end = false;
@@ -22,11 +19,11 @@ public class ATMTransaction implements ATMInterface{
                 int cardNumber = sc.nextInt();
                 System.out.println("Enter your Pin Number : ");
                 int pinNumber = sc.nextInt();
-                for (Map.Entry<Integer, Account> accountEntry : data.entrySet()) {
-                    Account acc = accountEntry.getValue();
-                    if (data.containsKey(cardNumber) && (pinNumber == acc.getPinNumber())) {
-//                        getChecking(acc);
+                for (Map.Entry<Integer, DebitCard> dbEntry : debitCard.entrySet()) {
+                    DebitCard db = dbEntry.getValue();
+                    if (debitCard.containsKey(cardNumber) && (pinNumber == db.getPin())) {
                         System.out.println("Details Found!!");
+//                        System.out.println("Welcome "+ acc.getCustomerName());
                         end = true;
                         break;
                     }
@@ -76,6 +73,6 @@ public class ATMTransaction implements ATMInterface{
         System.out.println("\nYour new account has been successfully registered!");
         System.out.println("Dear " + customerName + ", your account details are as follows :\nCardNumber : "+ cardNumber + "\nIFSC : " + ifsc + "\nBalance : 0");
         System.out.println("\nRedirecting to login.............");
-        getLogin(data);
+        getLogin();
     }
 }

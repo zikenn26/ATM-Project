@@ -19,9 +19,12 @@ public class DebitCard  {
     public void setCardNumber(int cardNumber) {
         this.card_number = cardNumber;
     }
-
-
     public String getExpireDate() {
         return expiry_date;
+    }
+
+    public DebitCard(int card_number, int pin) {
+        this.card_number = card_number;
+        this.pin = pin;
     }
 }
